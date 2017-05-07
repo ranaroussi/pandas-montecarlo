@@ -82,8 +82,8 @@ with 10 simulations (for demo simplifications) and bust/max drawdown set to -10.
         'mean':   0.98088401987146911,
         'median': 0.98088401987146911,
         'std':    4.0792198665315552e-16,
-        'maxdd': -0.17221175099828012,
-        'bust':   0.0005411255411255411}
+        'maxdd': -0.17221175099828012,  # max drawdown
+        'bust':   0.0005411255411255411  # probability of going bust
     }
 
 **Show bust / max drawdown stats**

@@ -44,7 +44,7 @@ setup(
     platforms = ['any'],
     keywords='montecarlo simulator, monte carlo, monte carlo simulation, montecarlo simulation',
     packages=find_packages(exclude=['contrib', 'docs', 'tests', 'examples']),
-    install_requires=['pandas'],
+    install_requires=['pandas', 'matplotlib'],
     entry_points={
         'console_scripts': [
             'sample=sample:main',

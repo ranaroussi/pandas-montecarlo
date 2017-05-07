@@ -1,0 +1,5 @@
+__pycache__/*
+pandas_montecarlo/__pycache__/*
+dist
+pandas_montecarlo.egg-info
+*.pyc

@@ -131,7 +131,7 @@ Requirements
 
 * `Python <https://www.python.org>`_ >=3.4
 * `Pandas <https://github.com/pydata/pandas>`_ (tested to work with >=0.18.1)
-
+* `Matplotlib <https://matplotlib.org>`_ (tested to work with >=1.5.3)
 
 
 Legal Stuff

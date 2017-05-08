@@ -18,7 +18,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='pandas-montecarlo',
-    version="0.0.1",
+    version="0.0.2",
     description='Monte Carlo Simulator for Pandas',
     long_description=long_description,
     url='https://github.com/ranaroussi/pandas-montecarlo',

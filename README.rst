@@ -49,19 +49,20 @@ First, let's download SPY's data and calculate the daily returns.
     df['return'] = df['Adj Close'].pct_change().fillna(0)
 
 Next, we'll import ``pandas_montecarlo`` and run monte carlo simulation
-with 10 simulations (for demo simplifications) and bust/max drawdown set to -10.0%:
+with 10 simulations (for demo simplifications) and bust/max drawdown set to ``-10.0%``
+and goal threshhold set to ``+100.0%`` (defaults is ``>=0%``):
 
 .. code:: python
 
     import pandas_montecarlo
-    mc = df['return'].montecarlo(sims=10, bust=-0.1)
+    mc = df['return'].montecarlo(sims=10, bust=-0.1, goal=1)
 
 
 **Plot simulations**
 
 .. code:: python
 
-    mc.plot("SPY Returns Monte Carlo Simulations")
+    mc.plot(title="SPY Returns Monte Carlo Simulations")  # optional: , figsize=(x, y)
 
 .. image:: https://raw.githubusercontent.com/ranaroussi/pandas-montecarlo/master/demo.png
    :width: 640 px
@@ -83,7 +84,8 @@ with 10 simulations (for demo simplifications) and bust/max drawdown set to -10.
         'median': 0.98088401987146911,
         'std':    4.0792198665315552e-16,
         'maxdd': -0.17221175099828012,  # max drawdown
-        'bust':   0.0005411255411255411  # probability of going bust
+        'bust':   0.2,  # probability of going bust
+        'goal':   0.0   # probability of reaching 100% goal
     }
 
 **Show bust / max drawdown stats**
@@ -101,7 +103,7 @@ with 10 simulations (for demo simplifications) and bust/max drawdown set to -10.
         'std':     0.062172124557467685
     }
 
-**Access raw simulations data**
+**Access raw simulations' DataFrame**
 
 .. code:: python
 

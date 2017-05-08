@@ -19,7 +19,7 @@
 # limitations under the License.
 
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __author__ = "Ran Aroussi"
 __all__ = ['montecarlo']
 
@@ -27,7 +27,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from pandas.core.base import PandasObject
 
-def montecarlo(series, sims=100, bust=-1):
+def montecarlo(series, sims=100, bust=-1, goal=0):
 
     if not isinstance(series, pd.Series):
         raise ValueError("Data must be a Pandas Series")
@@ -37,8 +37,8 @@ def montecarlo(series, sims=100, bust=-1):
         def __init__(self, **kwargs):
             self.__dict__.update(kwargs)
 
-    def plot(title="Monte Carlo Simulation Results"):
-        fig, ax = plt.subplots()
+    def plot(title="Monte Carlo Simulation Results", figsize=None):
+        fig, ax = plt.subplots(figsize=figsize)
         ax.plot(cumsum, lw=1, alpha=.8)
         ax.plot(cumsum["original"], lw=3, color="r", alpha=.8, label="Original")
         ax.axhline(0, color="black")
@@ -50,7 +50,7 @@ def montecarlo(series, sims=100, bust=-1):
         plt.close()
 
     results = [series.values]
-    for i in range(1, sims+1):
+    for i in range(1, sims):
         results.append(series.sample(frac=1).values)
 
     df = pd.DataFrame(results).T
@@ -58,7 +58,8 @@ def montecarlo(series, sims=100, bust=-1):
 
     cumsum = df.cumsum()
     total = cumsum[-1:].T
-    dd = cumsum.min()[cumsum.min()<0]
+    dd = cumsum.min()[cumsum.min() < 0]
+    nobust = cumsum[cumsum.min()[cumsum.min() > -abs(bust)].index][-1:]
 
     return __make_object__(**{
         "data": df,
@@ -69,7 +70,8 @@ def montecarlo(series, sims=100, bust=-1):
             "median": total.median().values[0],
             "std": total.std().values[0],
             "maxdd": dd.min(),
-            "bust": len(dd[(dd < -abs(bust))]) / len(df),
+            "bust": len(dd[dd <= -abs(bust)]) / sims,
+            "goal": (nobust >= abs(goal)).sum().sum() / sims,
         },
         "maxdd": {
             "min": dd.min(),

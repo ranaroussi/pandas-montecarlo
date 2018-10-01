@@ -1,13 +1,9 @@
 Monte Carlo Simulator for Pandas Series
 =======================================
 
-.. image:: https://img.shields.io/pypi/pyversions/pandas-montecarlo.svg?maxAge=60
+.. image:: https://img.shields.io/badge/python-3.4+-blue.svg?style=flat
     :target: https://pypi.python.org/pypi/pandas-montecarlo
     :alt: Python version
-
-.. image:: https://img.shields.io/travis/ranaroussi/pandas-montecarlo/master.svg?
-    :target: https://travis-ci.org/ranaroussi/pandas-montecarlo
-    :alt: Travis-CI build status
 
 .. image:: https://img.shields.io/pypi/v/pandas-montecarlo.svg?maxAge=60
     :target: https://pypi.python.org/pypi/pandas-montecarlo
@@ -17,11 +13,19 @@ Monte Carlo Simulator for Pandas Series
     :target: https://pypi.python.org/pypi/pandas-montecarlo
     :alt: PyPi status
 
+.. image:: https://img.shields.io/travis/ranaroussi/pandas-montecarlo/master.svg?maxAge=1
+    :target: https://travis-ci.org/ranaroussi/pandas-montecarlo
+    :alt: Travis-CI build status
+
+.. image:: https://img.shields.io/badge/Patreon-accepting-ff69b4.svg?style=flat
+    :target: https://www.patreon.com/aroussi
+    :alt: Patreon Status
+
 .. image:: https://img.shields.io/github/stars/ranaroussi/pandas-montecarlo.svg?style=social&label=Star&maxAge=60
     :target: https://github.com/ranaroussi/pandas-montecarlo
     :alt: Star this repo
 
-.. image:: https://img.shields.io/twitter/follow/aroussi.svg?style=social&label=Follow%20Me&maxAge=60
+.. image:: https://img.shields.io/twitter/follow/aroussi.svg?style=social&label=Follow&maxAge=60
     :target: https://twitter.com/aroussi
     :alt: Follow me on twitter
 

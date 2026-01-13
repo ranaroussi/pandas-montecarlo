@@ -1,3 +1,11 @@
+Project archived!
+=================
+
+**This project is archived!** - please switch to using `QuantStats <https://github.com/ranaroussi/quantstats>`_ for montecarlo simulation (and much more)
+
+~~~~~~~~~~~~
+
+
 Monte Carlo Simulator for Pandas Series
 =======================================
 
